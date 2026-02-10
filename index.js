@@ -20,7 +20,7 @@ const UserModel=db.model('UserModel', UserSchema, 'UserModel')
 
 await UserModel.create({
     "nombre":"fernando",
-    "correo": "fer8@correo.com",
+    "correo": "fer9@correo.com",
     "direccion":"madrid",
 })
 
@@ -28,6 +28,14 @@ const usuarios= await UserModel.find();
 
 console.log("la tabla de usuarios tiene los siguientes documentos: ",usuarios)
 
-const usuarioFer1= await UserModel.find({"nombre":"fernando", "correo":'fer7@correo.com'});
+const usuarioFer1= await UserModel.find({"nombre":"fernando", "correo":'fer9@correo.com'});
 
 console.log("el usuusuarioFer1 es: ", usuarioFer1)
+
+
+try {
+    await db.disconnect();
+    console.log("Conexión a MongoDB cerrada con éxito");
+  } catch (error) {
+    console.error("Error al cerrar la conexión:", error);
+  }
