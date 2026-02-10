@@ -20,7 +20,7 @@ const UserModel=db.model('UserModel', UserSchema, 'UserModel')
 
 await UserModel.create({
     "nombre":"fernando",
-    "correo": "fer9@correo.com",
+    "correo": "fer11@correo.com",
     "direccion":"madrid",
 })
 
@@ -32,6 +32,7 @@ const usuarioFer1= await UserModel.find({"nombre":"fernando", "correo":'fer9@cor
 
 console.log("el usuusuarioFer1 es: ", usuarioFer1)
 
+await UserModel.findOneAndUpdate({"nombre":"fernando", "correo":'fer11@correo.com'},{correo:"fernando2@correo.com"}, {new:true})
 
 try {
     await db.disconnect();
