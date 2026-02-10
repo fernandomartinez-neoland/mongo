@@ -9,18 +9,26 @@ const Schema= db.Schema;
 const UserSchema=new Schema({
     "nombre":String,
     "correo": {
-        type:"String",
+        type:String,
         require:true,
         unique:true
     },
-    "direccion":String
+    "direccion":String,
+    fecha:{
+        type: Timestamp,
+        
+    }
 });
 
 const UserModel=db.model('UserModel', UserSchema, 'UserModel')
 
 await UserModel.create({
     "nombre":"fernando",
-    "correo": "fer1@correo.com",
-    "direccion":"madrid"
+    "correo": "fer2@correo.com",
+    "direccion":"madrid",
+  
 })
 
+
+const fecha= new Date();
+console.log(fecha)
