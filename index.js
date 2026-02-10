@@ -17,3 +17,10 @@ const UserSchema=new Schema({
 });
 
 const UserModel=db.model('UserModel', UserSchema, 'UserModel')
+
+await UserModel.create({
+    "nombre":"fernando",
+    "correo": "fer1@correo.com",
+    "direccion":"madrid"
+})
+
