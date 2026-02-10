@@ -32,7 +32,10 @@ const usuarioFer1= await UserModel.find({"nombre":"fernando", "correo":'fer9@cor
 
 console.log("el usuusuarioFer1 es: ", usuarioFer1)
 
-await UserModel.findOneAndUpdate({"nombre":"fernando", "correo":'fer11@correo.com'},{correo:"fernando2@correo.com"}, {new:true})
+await UserModel.findOneAndUpdate({"nombre":"fernando", "correo":'fer11@correo.com'},{correo:"fernando3@correo.com"}, {new:true})
+
+await UserModel.findOneAndDelete({nombre:"fernando", correo:'fer9@correo.com'})
+
 
 try {
     await db.disconnect();
