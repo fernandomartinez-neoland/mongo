@@ -14,21 +14,20 @@ const UserSchema=new Schema({
         unique:true
     },
     "direccion":String,
-    fecha:{
-        type: Timestamp,
-        
-    }
 });
 
 const UserModel=db.model('UserModel', UserSchema, 'UserModel')
 
 await UserModel.create({
     "nombre":"fernando",
-    "correo": "fer2@correo.com",
+    "correo": "fer8@correo.com",
     "direccion":"madrid",
-  
 })
 
+const usuarios= await UserModel.find();
 
-const fecha= new Date();
-console.log(fecha)
+console.log("la tabla de usuarios tiene los siguientes documentos: ",usuarios)
+
+const usuarioFer1= await UserModel.find({"nombre":"fernando", "correo":'fer7@correo.com'});
+
+console.log("el usuusuarioFer1 es: ", usuarioFer1)
